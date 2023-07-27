@@ -35,7 +35,7 @@ export default function SlideElementSettings() {
         <button
           className={classNames(
             'rounded-lg p-1 font-bold',
-            selectedElement.isBold ? 'bg-blue-100' : 'hover:bg-blue-50'
+            selectedElement.isBold ? 'bg-blue-100' : 'hover:bg-blue-50',
           )}
           onClick={() => updateElement(selectedElement.id, { ...selectedElement, isBold: !selectedElement.isBold })}
         >
