@@ -1,0 +1,15 @@
+export const fontFamilies = [
+  'Arial',
+  'Arial Black',
+  'Courier New',
+  'Georgia',
+  'Helvetica',
+  'Impact',
+  'Lucida Console',
+  'Lucida Sans Unicode',
+  'Palatino Linotype',
+  'Tahoma',
+  'Times New Roman',
+  'Trebuchet MS',
+  'Verdana',
+];
