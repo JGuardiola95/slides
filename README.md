@@ -1,38 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Presentation app
 
-## Getting Started
+**Description:** The project is a React application built with Next.js and Tailwind CSS that simulates a presentation app.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Task given](#task-given)
+- [Thinking process](#thinking-process)
+- [Tech/Libraries Used](#techlibraries-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Possible Improvements](#possible-improvements)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Task given
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Create a React application where the main screen has a central area for adding new elements. To the left, there should be a menu with two buttons - each button should look like a miniature slide. By clicking on each we should be able to change the context like in the presentation app.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Above the area for adding elements, there should be a button for adding new elements. When this button is pressed, a new element should appear in the top left corner, or next to an existing element if one is already there - in the central area. The new element will be an instance of a rich text editor.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+When we create elements on the first "slide" they should not appear on the second one.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+When an instance is selected, a menu should appear on the right side for text manipulation: bold, italic, font color, and font family (minimum of 2 options).
 
-## Learn More
+When an instance of the rich text editor is selected, it should be focused (active), and the current styles should be reflected in the menu of the selected instance.
 
-To learn more about Next.js, take a look at the following resources:
+As you switch between instances, you should see changes in the menu of active styles.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+It should be possible to change the slide (by pressing the buttons on the left) and load rich text editor instances that belongs to the currently selected slide.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Thinking process
 
-## Deploy on Vercel
+![Thinking process](public/image.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech/Libraries Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js
+- Tailwind CSS
+- TypeScript
+- Context API for state management
+
+## Project Structure
+
+- `pages/index.tsx`: Main page component where the presentation app is rendered.
+- `hooks/usePresentation.ts`: Custom hook for managing global state and slide manipulation.
+- `reducers/presentationReducer.ts`: Reducer used to handle presentation state with useReducer hook.
+- `components/`: Folder containing reusable components used in the app.
+
+## Installation
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+
+## Usage
+
+1. Run the app locally using `npm run dev`.
+2. Access the app in your browser at `http://localhost:3000` (If port is already on use, please use the one given by NextJs on your shell).
+
+## Possible Improvements
+
+- Implement Storybook for component isolation and testing.
+- Explore the use of isolated elements to prevent the re-rendering of the entire presentation when editing a single element.
+- Enhance the design and user interface.
