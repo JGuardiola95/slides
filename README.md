@@ -59,5 +59,6 @@ It should be possible to change the slide (by pressing the buttons on the left) 
 ## Possible Improvements
 
 - Implement Storybook for component isolation and testing.
+- Implement accessibility.
 - Explore the use of isolated elements to prevent the re-rendering of the entire presentation when editing a single element.
 - Enhance the design and user interface.
